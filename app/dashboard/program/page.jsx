@@ -18,7 +18,7 @@ import {
 } from '@/components/ui/table';
 
 import { PlusCircle } from 'lucide-react';
-import ProductRow from '@/components/product-row';
+import ProgramRow from '@/components/program-row';
 import { getAllProgram } from '@/lib/prismaFunctions';
 
 export default async function Page() {
@@ -64,7 +64,7 @@ export default async function Page() {
                 </TableHeader>
                 <TableBody>
                   {programs.map((program) => (
-                    <ProductRow
+                    <ProgramRow
                       key={program.id}
                       id={program.id}
                       name={program.name}
