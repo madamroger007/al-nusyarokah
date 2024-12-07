@@ -59,13 +59,13 @@ export default async function Page() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {blogs.map((blog) => (
+                  {blogs.map((news) => (
                     <BlogRow
-                      key={blog.id}
-                      id={blog.id}
-                      title={blog.title}
-                      imageUrl={blog.imageUrl}
-                      createdAt={blog.createdAt}
+                      key={news.id}
+                      id={news.id}
+                      title={news.title}
+                      imageUrl={news.imageUrl}
+                      createdAt={news.createdAt}
                     />
                   ))}
                 </TableBody>

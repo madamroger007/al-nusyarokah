@@ -19,9 +19,24 @@ import SubmitButton from '@/components/submit-button';
 import { ChevronLeft } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
+import React from 'react';
 
 export default function ProgramForm({ formAction, initialData }) {
   const [state, action] = useFormState(formAction, initialData);
+  const [image, setImage] = React.useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0]; // Ambil file pertama (single file)
+    if (file) {
+      const newImageUrl = URL.createObjectURL(file);
+      setImage(newImageUrl);
+
+      // Membersihkan URL object lama untuk menghindari memory leak
+      if (image) {
+        URL.revokeObjectURL(image);
+      }
+    }
+  };
 
   return (
     <form
@@ -102,7 +117,14 @@ export default function ProgramForm({ formAction, initialData }) {
                   {!initialData?.imageUrl && (
                     <div className='grid gap-3'>
                       <Label htmlFor='picture'>Gambar</Label>
-                      <Input id='picture' name='picture' type='file' />
+                      <Input
+                        id="picture"
+                        name="picture"
+                        type="file"
+                        multiple
+                        accept="image/*"
+                        onChange={handleFileChange}
+                      />
                       <div
                         aria-live='polite'
                         aria-atomic='true'
@@ -112,6 +134,17 @@ export default function ProgramForm({ formAction, initialData }) {
                       </div>
                     </div>
                   )}
+
+                  <div style={{ marginTop: "16px" }}>
+                    {image && (
+                      <img
+                        src={image}
+                        alt="Uploaded Preview"
+                        style={{ width: "200px", height: "200px", objectFit: "cover" }}
+                      />
+                    )}
+                  </div>
+
                 </div>
               </CardContent>
             </Card>

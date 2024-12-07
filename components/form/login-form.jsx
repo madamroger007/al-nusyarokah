@@ -21,11 +21,11 @@ export function LoginForm({ formAction, initialData }) {
   return (
     <form
       action={action}
-      className='w-full h-screen container flex items-center justify-center'
+      className='w-full h-screen container flex items-center justify-center bg-[]'
     >
       <Card className='w-full max-w-sm'>
         <CardHeader>
-          <CardTitle className='text-2xl'>Login</CardTitle>
+          <CardTitle className='text-2xl text-center'>Login Admin</CardTitle>
           <CardDescription>
             Masukkan username dan password untuk login
           </CardDescription>

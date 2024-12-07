@@ -20,23 +20,22 @@ export default async function Navigation({ children }) {
   const session = await auth();
 
   return (
-    <div className='grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]'>
-      <div className='hidden border-r bg-muted/40 md:block'>
+    <div className='grid min-h-screen  w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]'>
+      <div className='hidden border-r bg-[#1e1e20]  md:block'>
         <div className='flex h-full max-h-screen flex-col gap-2'>
           <div className='flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6'>
             <Link
               href='/dashboard'
               className='flex items-center gap-2 font-semibold'
             >
-
-              <span className=''>Dashboard Madrasah</span>
+              <span className='text-white font-bold'>Dashboard Madrasah</span>
             </Link>
           </div>
           <div className='flex-1'>
-            <nav className='grid items-start px-2 text-sm font-medium lg:px-4 gap-16'>
+            <nav className='grid items-start px-2 text-sm font-medium lg:px-4 gap-12'>
               <NavLinks />
 
-              <div className='flex items-center gap-3'>
+              <div className='flex items-center text-white gap-3'>
                 <LogOutIcon className='h-5 w-5' />
                 <LogoutButton />
               </div>
@@ -45,22 +44,21 @@ export default async function Navigation({ children }) {
         </div>
       </div>
       <div className='flex flex-col'>
-        <header className='flex h-14 items-center justify-end gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6'>
+        <header className='flex h-14 items-center justify-end gap-4 border-b  max-md:bg-[#1e1e20] px-4 lg:h-[60px] lg:px-6'>
           <Sheet>
             <SheetTrigger asChild>
               <Button
-                variant='outline'
                 size='icon'
-                className='shrink-0 md:hidden'
+                className='shrink-0 md:hidden bg-[#1e1e20]'
               >
                 <Menu className='h-5 w-5' />
                 <span className='sr-only'>Menu Navigasi</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side='left' className='flex flex-col'>
-              <nav className='grid gap-3 text-lg font-medium'>
+            <SheetContent side='left' className='flex flex-col max-md:bg-[#1e1e20] ' >
+              <nav className='grid gap-3 text-lg font-medium  '>
                 <NavLinksMobile />
-                <div className='flex items-center gap-3'>
+                <div className='flex items-center gap-3 text-white'>
                   <LogOutIcon className='h-5 w-5' />
                   <LogoutButton />
                 </div>

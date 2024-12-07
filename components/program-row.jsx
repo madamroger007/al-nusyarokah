@@ -11,9 +11,10 @@ import { Button } from '@/components/ui/button';
 import { MoreHorizontal } from 'lucide-react';
 import DeleteProgramButton from './delete-program-button';
 import EditProgramButton from './edit-program-button';
+import { ConvertTime } from '@/lib/time';
 
 export default function ProgramRow({ id, imageUrl, name, price, createdAt }) {
-  const date = createdAt.toLocaleString();
+  const { timeAgo } = ConvertTime(createdAt);
 
   return (
     <TableRow>
@@ -28,7 +29,7 @@ export default function ProgramRow({ id, imageUrl, name, price, createdAt }) {
       </TableCell>
       <TableCell className='font-medium'>{name}</TableCell>
 
-      <TableCell className='hidden md:table-cell'>{date}</TableCell>
+      <TableCell className='hidden md:table-cell'>{timeAgo}</TableCell>
       <TableCell>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

@@ -9,14 +9,14 @@ export function NavLinks() {
   const pathname = usePathname();
 
   return (
-    <div>
+    <div >
       <Link
         href='/dashboard'
         className={cn(
           pathname === '/dashboard'
             ? 'text-primary bg-muted'
-            : 'text-muted-foreground',
-          'flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary'
+            : 'text-white',
+          'flex items-center gap-3  rounded-lg px-3 py-2 transition-all hover:text-primary'
         )}
       >
         <Home className='h-4 w-4' />
@@ -27,7 +27,7 @@ export function NavLinks() {
         className={cn(
           pathname.startsWith('/dashboard/program')
             ? 'text-primary bg-muted'
-            : 'text-muted-foreground',
+            : 'text-white',
           'flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary'
         )}
       >
@@ -39,7 +39,7 @@ export function NavLinks() {
         className={cn(
           pathname.startsWith('/dashboard/posts')
             ? 'text-primary bg-muted'
-            : 'text-muted-foreground',
+            : 'text-white',
           'flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary'
         )}
       >
@@ -52,7 +52,7 @@ export function NavLinks() {
         className={cn(
           pathname.startsWith('/dashboard/galeri')
             ? 'text-primary bg-muted'
-            : 'text-muted-foreground',
+            : 'text-white',
           'flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary'
         )}
       >
@@ -69,45 +69,60 @@ export function NavLinksMobile() {
   return (
     <>
       <Link href='#' className='flex items-center gap-2 text-lg font-semibold'>
-        <Package2 className='h-6 w-6' />
-        <span className='sr-only'>Tumbuh Lestari</span>
+
+        <span className='text-white'>Dashboard Madrasah</span>
       </Link>
       <Link
         href='/dashboard'
         className={cn(
           pathname === '/dashboard'
             ? 'text-primary bg-muted'
-            : 'text-muted-foreground',
+            : 'text-white',
           'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-foreground'
         )}
       >
         <Home className='h-5 w-5' />
-        Home
+        Beranda
       </Link>
       <Link
-        href='/dashboard/products'
+        href='/dashboard/program'
         className={cn(
-          pathname.startsWith('/dashboard/products')
+          pathname.startsWith('/dashboard/program')
             ? 'text-primary bg-muted'
-            : 'text-muted-foreground',
+            : 'text-white',
           'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-foreground'
         )}
       >
         <Package className='h-5 w-5' />
-        Produk
+        Postingan Program
       </Link>
       <Link
         href='/dashboard/posts'
         className={cn(
           pathname.startsWith('/dashboard/posts')
             ? 'text-primary bg-muted'
-            : 'text-muted-foreground',
+            : 'text-white',
           'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-foreground'
         )}
       >
-        <LineChart className='h-5 w-5' />
-        Blog
+        <NewspaperIcon className='h-4 w-4' />
+        Postingan Berita
       </Link>
+      <Link
+        href='/dashboard/galeri'
+        className={cn(
+          pathname.startsWith('/dashboard/galeri')
+            ? 'text-primary bg-muted'
+            : 'text-white',
+          'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-foreground'
+        )}
+      >
+        <ImageIcon className='h-4 w-4' />
+        Galeri
+      </Link>
+
+
+
     </>
   );
 }

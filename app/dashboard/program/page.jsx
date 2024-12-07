@@ -25,12 +25,12 @@ export default async function Page() {
   const programs = await getAllProgram();
   return (
     <div className='grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8'>
-      <Tabs defaultValue='all'>
+      <Tabs defaultValue='all' >
         <div className='flex items-center'>
           <div className='ml-auto flex items-center gap-2'>
             <Link
               href='/dashboard/program/add'
-              className={buttonVariants({ variant: 'default', size: 'sm' })}
+              className={buttonVariants({ variant: 'default', size: 'sm', })}
             >
               <PlusCircle className='h-3.5 w-3.5' />
               <span className='not-sr-only sm:whitespace-nowrap'>
@@ -39,14 +39,14 @@ export default async function Page() {
             </Link>
           </div>
         </div>
-        <TabsContent value='all'>
+        <TabsContent value='all' >
           <Card x-chunk='dashboard-06-chunk-0'>
             <CardHeader>
               <CardTitle>Program</CardTitle>
               <CardDescription>Kelola Program anda</CardDescription>
             </CardHeader>
-            <CardContent>
-              <Table>
+            <CardContent >
+              <Table >
                 <TableHeader>
                   <TableRow>
                     <TableHead className='hidden w-[100px] sm:table-cell'>
