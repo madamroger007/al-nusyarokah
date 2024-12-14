@@ -19,7 +19,7 @@ model Program {
   @@map("program")
 }
 
-model BlogPosts {
+model Berita {
   id          String   @id @default(uuid())
   title       String   @db.VarChar(255)
   description String
@@ -27,7 +27,7 @@ model BlogPosts {
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
 
-  @@map("blog_posts")
+  @@map("berita")
 }
 
 model Galeri {

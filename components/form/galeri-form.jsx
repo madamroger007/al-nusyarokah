@@ -74,9 +74,7 @@ export default function GaleriForm({ formAction, initialData }) {
             <Card x-chunk='dashboard-07-chunk-0'>
               <CardHeader>
                 <CardTitle>Postingan Galeri</CardTitle>
-                <CardDescription>
-                  Tambahkan detail postingan Galeri
-                </CardDescription>
+              
               </CardHeader>
               <CardContent>
                 <div className='grid gap-6'>

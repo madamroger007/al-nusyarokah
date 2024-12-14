@@ -5,7 +5,6 @@ import {
   CardHeader,
   CardTitle,
   CardContent,
-  CardDescription,
 } from "@/components/ui/card";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { buttonVariants } from "@/components/ui/button";
@@ -18,18 +17,18 @@ import {
 } from "@/components/ui/table";
 
 import { PlusCircle } from "lucide-react";
-import BlogRow from "@/components/blog-row";
-import { getAllPosts } from "@/lib/prismaFunctions";
+import BeritaRow from "@/components/berita/berita-row";
+import { getAllBerita } from "@/lib/prismaFunctions";
 
 export default async function Page() {
-  const blogs = await getAllPosts();
+  const beritas = await getAllBerita();
   return (
     <div className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
       <Tabs defaultValue="all">
         <div className="flex items-center">
           <div className="ml-auto flex items-center gap-2">
             <Link
-              href="/dashboard/posts/add"
+              href="/dashboard/berita/add"
               className={buttonVariants({ variant: "default", size: "sm" })}
             >
               <PlusCircle className="h-3.5 w-3.5" />
@@ -43,29 +42,37 @@ export default async function Page() {
           <Card x-chunk="dashboard-06-chunk-0">
             <CardHeader>
               <CardTitle>Postingan Berita</CardTitle>
-              <CardDescription>Kelola postingan Berita </CardDescription>
+
             </CardHeader>
             <CardContent>
               <Table>
-                <TableHeader>
+              <TableHeader>
                   <TableRow>
-                    <TableHead>Judul</TableHead>
-                    <TableHead className="hidden md:table-cell">
+                    <TableHead className='hidden sm:table-cell'>
+                      <span >Gambar</span>
+                    </TableHead>
+                    <TableHead>Nama</TableHead>
+
+                    <TableHead className='hidden md:table-cell'>
                       Dibuat pada
                     </TableHead>
+                    <TableHead className='hidden md:table-cell'>
+                      Diubah pada
+                    </TableHead>
                     <TableHead>
-                      <span className="sr-only">Actions</span>
+                      <span className='sr-only'>Aksi</span>
                     </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {blogs.map((blog) => (
-                    <BlogRow
-                      key={blog.id}
-                      id={blog.id}
-                      title={blog.title}
-                      imageUrl={blog.imageUrl}
-                      createdAt={blog.createdAt}
+                  {beritas.map((item) => (
+                    <BeritaRow
+                      key={item.id}
+                      id={item.id}
+                      title={item.title}
+                      imageUrl={item.imageUrl}
+                      createdAt={item.createdAt}
+                      updatedAt={item.updatedAt}
                     />
                   ))}
                 </TableBody>

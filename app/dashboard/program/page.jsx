@@ -5,7 +5,6 @@ import {
   CardHeader,
   CardTitle,
   CardContent,
-  CardDescription,
 } from '@/components/ui/card';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { buttonVariants } from '@/components/ui/button';
@@ -18,7 +17,7 @@ import {
 } from '@/components/ui/table';
 
 import { PlusCircle } from 'lucide-react';
-import ProgramRow from '@/components/program-row';
+import ProgramRow from '@/components/program/program-row';
 import { getAllProgram } from '@/lib/prismaFunctions';
 
 export default async function Page() {
@@ -43,19 +42,21 @@ export default async function Page() {
           <Card x-chunk='dashboard-06-chunk-0'>
             <CardHeader>
               <CardTitle>Program</CardTitle>
-              <CardDescription>Kelola Program anda</CardDescription>
             </CardHeader>
             <CardContent >
               <Table >
                 <TableHeader>
                   <TableRow>
-                    <TableHead className='hidden w-[100px] sm:table-cell'>
-                      <span className='sr-only'>Gambar</span>
+                    <TableHead className='hidden sm:table-cell'>
+                      <span >Gambar</span>
                     </TableHead>
                     <TableHead>Nama</TableHead>
 
                     <TableHead className='hidden md:table-cell'>
                       Dibuat pada
+                    </TableHead>
+                    <TableHead className='hidden md:table-cell'>
+                      Diubah pada
                     </TableHead>
                     <TableHead>
                       <span className='sr-only'>Aksi</span>
@@ -70,6 +71,7 @@ export default async function Page() {
                       name={program.name}
                       imageUrl={program.imageUrl}
                       createdAt={program.createdAt}
+                      updatedAt={program.updatedAt}
                     />
                   ))}
                 </TableBody>

@@ -13,8 +13,9 @@ import DeleteProgramButton from './delete-program-button';
 import EditProgramButton from './edit-program-button';
 import { ConvertTime } from '@/lib/time';
 
-export default function ProgramRow({ id, imageUrl, name, price, createdAt }) {
-  const { timeAgo } = ConvertTime(createdAt);
+export default function ProgramRow({ id, imageUrl, name,  createdAt, updatedAt }) {
+  const { timeAgo:created } = ConvertTime(createdAt);
+  const { timeAgo:updated } = ConvertTime(updatedAt);
 
   return (
     <TableRow>
@@ -29,7 +30,8 @@ export default function ProgramRow({ id, imageUrl, name, price, createdAt }) {
       </TableCell>
       <TableCell className='font-medium'>{name}</TableCell>
 
-      <TableCell className='hidden md:table-cell'>{timeAgo}</TableCell>
+      <TableCell className='hidden md:table-cell'>{created}</TableCell>
+      <TableCell className='hidden md:table-cell'>{updated}</TableCell>
       <TableCell>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

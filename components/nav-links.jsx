@@ -35,9 +35,9 @@ export function NavLinks() {
         Program kegiatan
       </Link>
       <Link
-        href='/dashboard/posts'
+        href='/dashboard/berita'
         className={cn(
-          pathname.startsWith('/dashboard/posts')
+          pathname.startsWith('/dashboard/berita')
             ? 'text-primary bg-muted'
             : 'text-white',
           'flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary'
@@ -97,9 +97,9 @@ export function NavLinksMobile() {
         Postingan Program
       </Link>
       <Link
-        href='/dashboard/posts'
+        href='/dashboard/berita'
         className={cn(
-          pathname.startsWith('/dashboard/posts')
+          pathname.startsWith('/dashboard/berita')
             ? 'text-primary bg-muted'
             : 'text-white',
           'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-foreground'

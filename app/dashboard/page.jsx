@@ -1,11 +1,11 @@
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Package, BookText, ImageIcon } from 'lucide-react';
 
-import { getTotalProgram, getTotalPosts, getTotalGallery } from '@/lib/prismaFunctions';
+import { getTotalProgram, getTotalBerita, getTotalGallery } from '@/lib/prismaFunctions';
 
 export default async function Page() {
   const totalProgram = await getTotalProgram();
-  const totalPosts = await getTotalPosts();
+  const totalBerita = await getTotalBerita();
   const totalGalery = await getTotalGallery();
 
   return (
@@ -28,7 +28,7 @@ export default async function Page() {
           <BookText className='h-4 w-4 text-muted-foreground' />
         </CardHeader>
         <CardContent>
-          <div className='text-2xl font-bold'>{totalPosts}</div>
+          <div className='text-2xl font-bold'>{totalBerita}</div>
           <p className='text-xs text-muted-foreground'>
             Total postingan berita yang telah dibuat
           </p>

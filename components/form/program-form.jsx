@@ -73,9 +73,7 @@ export default function ProgramForm({ formAction, initialData }) {
             <Card x-chunk='dashboard-07-chunk-0'>
               <CardHeader>
                 <CardTitle>Detail Program</CardTitle>
-                <CardDescription>
-                  Tambahkan detail dan gambar program
-                </CardDescription>
+                
               </CardHeader>
               <CardContent>
                 <div className='grid gap-6'>

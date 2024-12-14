@@ -11,10 +11,10 @@ export default function NotFound() {
     >
       <div className='flex flex-col items-center gap-1 text-center'>
         <h3 className='text-2xl font-bold tracking-tight'>
-          Program tidak ditemukan
+          berita tidak ditemukan
         </h3>
         <p className='text-sm text-muted-foreground'>
-          Program yang Anda cari tidak ditemukan.
+          berita yang Anda cari tidak ditemukan.
         </p>
         <Link
           href='/dashboard/products'

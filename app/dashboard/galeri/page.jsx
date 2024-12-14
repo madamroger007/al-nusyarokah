@@ -18,8 +18,9 @@ import {
 } from "@/components/ui/table";
 
 import { PlusCircle } from "lucide-react";
-import BlogRow from "@/components/blog-row";
+
 import { getAllGaleri } from "@/lib/prismaFunctions";
+import GaleriRow from "@/components/galeri/galeri-row";
 
 export default async function Page() {
   const blogs = await getAllGaleri();
@@ -43,12 +44,13 @@ export default async function Page() {
           <Card x-chunk="dashboard-06-chunk-0">
             <CardHeader>
               <CardTitle>Postingan Galeri</CardTitle>
-              <CardDescription>Kelola postingan Galeri </CardDescription>
+
             </CardHeader>
             <CardContent>
               <Table>
                 <TableHeader>
                   <TableRow>
+                    <TableHead>Gambar</TableHead>
                     <TableHead>Judul</TableHead>
                     <TableHead className="hidden md:table-cell">
                       Dibuat pada
@@ -60,7 +62,7 @@ export default async function Page() {
                 </TableHeader>
                 <TableBody>
                   {blogs.map((news) => (
-                    <BlogRow
+                    <GaleriRow
                       key={news.id}
                       id={news.id}
                       title={news.title}

@@ -13,10 +13,10 @@ import {
   AlertDialogAction,
 } from '@/components/ui/alert-dialog';
 
-import { deleteBlogPost } from '@/lib/actions';
+import { deleteGaleri } from '@/lib/actions';
 
-export default async function DeleteBlogButton({ id }) {
-  const deleteBlogPostById = await deleteBlogPost.bind(null, id);
+export default async function DeleteGaleriButton({ id }) {
+  const deleteGaleriById = await deleteGaleri.bind(null, id);
 
   return (
     <AlertDialog>
@@ -36,7 +36,7 @@ export default async function DeleteBlogButton({ id }) {
         <AlertDialogFooter>
           <AlertDialogCancel>Tidak</AlertDialogCancel>
           <AlertDialogAction>
-            <form action={deleteBlogPostById}>
+            <form action={deleteGaleriById}>
               <Button type='submit'>Ya, hapus</Button>
             </form>
           </AlertDialogAction>

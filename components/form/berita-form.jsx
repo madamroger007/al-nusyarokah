@@ -21,7 +21,7 @@ import { ChevronLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 
-export default function BlogForm({ formAction, initialData }) {
+export default function BeritaForm({ formAction, initialData }) {
   const [state, action] = useFormState(formAction, initialData);
   const [image, setImage] = useState(null);
 
@@ -45,7 +45,7 @@ export default function BlogForm({ formAction, initialData }) {
       <div className='grid max-w-full flex-1 auto-rows-max gap-4'>
         <div className='flex items-center gap-4'>
           <Link
-            href={'/dashboard/posts'}
+            href={'/dashboard/berita'}
             className={cn(
               buttonVariants({ variant: 'outline', size: 'icon' }),
               'c-7 h-7'
@@ -59,7 +59,7 @@ export default function BlogForm({ formAction, initialData }) {
           </h1>
           <div className='hidden items-center gap-2 md:ml-auto md:flex'>
             <Link
-              href='/dashboard/posts'
+              href='/dashboard/berita'
               className={buttonVariants({ variant: 'outline', size: 'sm' })}
             >
               Batal
@@ -72,9 +72,7 @@ export default function BlogForm({ formAction, initialData }) {
             <Card x-chunk='dashboard-07-chunk-0'>
               <CardHeader>
                 <CardTitle>Postingan Berita</CardTitle>
-                <CardDescription>
-                  Tambahkan detail postingan Berita
-                </CardDescription>
+
               </CardHeader>
               <CardContent>
                 <div className='grid gap-6'>

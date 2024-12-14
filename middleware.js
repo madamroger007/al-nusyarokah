@@ -1,12 +1,14 @@
 import { auth } from '@/auth';
 
-import {
-  authRoutes,
-  apiAuthPrefix,
-  apiProgramRoute,
-  apiPostRoute,
-  apiGaleriRoute
-} from '@/routes';
+const apiProgramRoute = '/api/program';
+const apiBeritaRoute = '/api/berita';
+const apiGaleriRoute = '/api/galeri';
+
+
+export const authRoutes = ['/auth/login'];
+
+export const apiAuthPrefix = '/api/auth';
+
 
 export default auth((req) => {
   const { nextUrl } = req;
@@ -14,7 +16,7 @@ export default auth((req) => {
 
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
   const isApiProgramRoute = nextUrl.pathname.startsWith(apiProgramRoute);
-  const isApiPostRoute = nextUrl.pathname.startsWith(apiPostRoute);
+  const isApiBeritaRoute = nextUrl.pathname.startsWith(apiBeritaRoute);
   const isApiGaleriRoute = nextUrl.pathname.startsWith(apiGaleriRoute);
 
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
@@ -30,7 +32,7 @@ export default auth((req) => {
     return null;
   }
 
-  if (!isLoggedIn && !isApiProgramRoute && !isApiPostRoute && !isApiGaleriRoute) {
+  if (!isLoggedIn && !isApiProgramRoute && !isApiBeritaRoute && !isApiGaleriRoute) {
     return Response.redirect(new URL('/auth/login', nextUrl));
   }
 });
